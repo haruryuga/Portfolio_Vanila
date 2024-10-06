@@ -36,3 +36,33 @@ window.addEventListener("load", function () {
     lastScrollTop = scrollTop;
   });
 });
+
+jQuery(document).ready(function ($) {
+  // Handle form submission
+  $("#query-form").on("submit", function (event) {
+    event.preventDefault();
+
+    let plantName = $("#plant").val();
+    let animalName = $("#animal").val();
+
+    if (plantName && animalName) {
+      $("#poetry-title").text(`The ${plantName} and the ${animalName}`);
+      $("#poetry-body").html(
+        `<p>Plant: ${plantName}</p><p>Animal: ${animalName}</p>`
+      );
+      $("#form-message").text("Thank you for submitting!");
+    } else {
+      $("#form-message").text("Please enter both a plant and an animal.");
+    }
+  });
+
+  $("#resetButton").on("click", function () {
+    resetResults();
+  });
+
+  function resetResults() {
+    $("#poetry-title").text("");
+    $("#poetry-body").html("");
+    $("#form-message").text("");
+  }
+});

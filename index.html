@@ -12,7 +12,6 @@
     <meta http-equiv="“CACHE-CONTROL”" content="”NO-CACHE”" />
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="css/master.css" />
-    <link rel="stylesheet" href="css/nav.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
@@ -763,6 +762,68 @@
           <!--/.container-->
         </section>
       </main>
+      <div class="applet-div container">
+        <p class="section-heading">
+          Take a <span class="first">Break</span> and be
+          <span class="first">Poetic!</span>
+        </p>
+
+        <form id="query-form">
+          <div>
+            <label for="plant">Enter the name of a plant:</label>
+            <input
+              class="textfield form-control"
+              id="plant"
+              type="text"
+              name="plant"
+              placeholder="e.g. orchid"
+            />
+          </div>
+          <div>
+            <label for="animal">Enter the name of an animal:</label>
+            <input
+              class="textfield form-control"
+              id="animal"
+              type="text"
+              name="animal"
+              placeholder="e.g. dolphin"
+            />
+          </div>
+          <div class="button">
+            <div class="poetry-title" id="poetry-title"></div>
+            <div class="poetry-body" id="poetry-body"></div>
+
+            <input
+              class="btn btn-warning"
+              type="button"
+              value="Reset"
+              id="resetButton"
+              onclick="this.form.reset();resetResults()"
+            />
+            <input
+              class="btn btn-primary"
+              type="submit"
+              value="Make / Remake"
+              id="makeButton"
+            />
+
+            <div class="poetry-form-message" id="form-message"></div>
+          </div>
+        </form>
+
+        <p
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title=""
+          onclick="javascript:toolTipReset()"
+          data-original-title="These tags tell you what technologies I use"
+        >
+          Powered by :
+          <span class="keyword-magnet">JavaScript</span>
+          <span class="keyword-magnet">JQuery</span>
+          <span class="keyword-magnet">Bootstrap</span>
+        </p>
+      </div>
       <footer>
         <p class="copyright-text">© Copyright 2024 Aleksandar Dutina</p>
       </footer>
@@ -770,12 +831,9 @@
   </body>
 
   <!-- Our codes -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="js/main.js"></script>
-  <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"
-  ></script>
+
   <script
     src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
